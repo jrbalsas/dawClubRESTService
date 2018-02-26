@@ -17,14 +17,8 @@
     <dependencies>
         <dependency>
             <groupId>org.apache.derby</groupId>
-            <artifactId>derbyclient</artifactId>
-            <version>10.13.1.1</version>
-            <scope>runtime</scope>
-        </dependency>        
-        <dependency>
-            <groupId>org.apache.derby</groupId>
-            <artifactId>derbyLocale_es</artifactId>
-            <version>10.13.1.1</version>
+            <artifactId>derby</artifactId>
+            <version>10.14.1.0</version>
             <scope>runtime</scope>
         </dependency>        
 
@@ -32,34 +26,33 @@
         <dependency>
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet</artifactId>
-            <version>2.4.2.Final</version>
+            <version>2.4.6.Final</version>
             <scope>runtime</scope>
         </dependency>
         <!-- JAX-RS implementation for Tomcat -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
-            <version>2.23</version>
+            <version>2.25</version>
         </dependency>
         <!-- Enable CDI in JAX-RS endpoints for Tomcat -->
         <dependency>
             <groupId>org.glassfish.jersey.ext.cdi</groupId>
             <artifactId>jersey-cdi1x</artifactId>
-            <version>2.23</version>
+            <version>2.25</version>
         </dependency>
         <!-- Jersey Bean Validation -->
         <dependency>
             <groupId>org.glassfish.jersey.ext</groupId>
             <artifactId>jersey-bean-validation</artifactId>
-            <version>2.23</version>
+            <version>2.25</version>
         </dependency>        
         <!-- JSON-B JSR367 implementation for Tomcat -->        
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-jackson</artifactId>
-            <version>2.23</version>
-        </dependency>   
-         
+            <version>2.25</version>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -75,8 +68,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
@@ -93,7 +86,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.6</version>
                 <executions>
                     <execution>
                         <phase>validate</phase>
