@@ -8,8 +8,8 @@ Features:
 - JAX-RS webservice for serving JSON contents
 - Service users CDI for DAO Injection
 - Bean-validation for POST/PUT operations
-- Runtime dependencies for Tomcat
-- Tomcat filter to allow CORS for CRUD REST Methods
+- Custom bean-validation exception handler for generating JSON errors
+- Custom filter to allow CORS for CRUD REST Methods
 
 Usage:
 -------------
