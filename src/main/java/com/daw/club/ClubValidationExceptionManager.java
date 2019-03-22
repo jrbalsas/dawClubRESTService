@@ -18,7 +18,8 @@ public class ClubValidationExceptionManager implements ExceptionMapper<Constrain
 
     @Override
     public Response toResponse(ConstraintViolationException e) {
-        //convert bean-validation contstraintviolation set to json object
+        //convert bean-validation contstraintviolation set to json array
+        //p.e. [{"name":"age", "message":"the age must be over 18"}]
 
         List<Object> errors = new ArrayList<>();
 
@@ -27,9 +28,9 @@ public class ClubValidationExceptionManager implements ExceptionMapper<Constrain
             //attribute name is the last part, e.g. method.arg0.propname
             String[] parts=cv.getPropertyPath().toString().split("\\.");            
             
-            Object m = new Object () {
+            Object m = new Object () { //Temp anonymous inner class
                 public String name = parts[parts.length-1];
-                public String error = cv.getMessage();
+                public String message = cv.getMessage();
             };
             errors.add(m);
         };
@@ -38,5 +39,4 @@ public class ClubValidationExceptionManager implements ExceptionMapper<Constrain
                 .entity(errors)
                 .build();
     }
-
 }
